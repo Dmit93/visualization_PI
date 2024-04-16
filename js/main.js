@@ -7,7 +7,7 @@ const width = canvas.width;
 const height = canvas.height;
 const centerX = width / 2;
 const centerY = height / 2;
-const scale = setScale(canvas); // Масштаб для увеличения размера комплексных чисел
+const scale = setScale(canvas);
 const radius = 0;
 let theta = 0;
 
@@ -36,13 +36,13 @@ function draw() {
     // Перемещаем начало координат в центр канваса
     ctx.translate(centerX, centerY);
 
-    // Рисуем первую точку
+    // Первая точка
     ctx.beginPath();
     ctx.arc(x1 * scale, y1 * scale, radius, 0, Math.PI * 2);
     ctx.fillStyle = 'blue';
     ctx.fill();
 
-    // Рисуем вторую точку
+    // Вторая точка
     ctx.beginPath();
     ctx.arc(x2 * scale, y2 * scale, radius, 0, Math.PI * 2);
     ctx.fillStyle = 'red';
