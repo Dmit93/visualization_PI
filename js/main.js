@@ -20,7 +20,7 @@ let theta = 0;
  */
 function setScale(canvas) {
     const canvasWidth = canvas.width;
-    const scale = canvasWidth / 5;
+    const scale = canvasWidth / 4;
     return scale;
 }
 
