@@ -7,12 +7,25 @@ const width = canvas.width;
 const height = canvas.height;
 const centerX = width / 2;
 const centerY = height / 2;
-const scale = 500; // Масштаб для увеличения размера комплексных чисел
+const scale = setScale(canvas); // Масштаб для увеличения размера комплексных чисел
 const radius = 0;
 let theta = 0;
 
+
+/**
+ * Calculates the scale for resizing complex numbers based on the canvas width.
+ * 
+ * @param {HTMLCanvasElement} canvas - The canvas element.
+ * @returns {number} The scale value.
+ */
+function setScale(canvas) {
+    const canvasWidth = canvas.width;
+    const scale = canvasWidth / 5;
+    return scale;
+}
+
 function draw() {
-    //ctx.clearRect(0, 0, width, height); // Очищаем канвас
+    //ctx.clearRect(0, 0, width, height);
 
     // Рассчитываем координаты для z(θ) = e^(iθ) + e^(iπθ)
     const x1 = Math.cos(theta);
@@ -42,7 +55,7 @@ function draw() {
     gradient.addColorStop(0.66, 'rgba(255, 0, 0, 0.2)'); // Красный 
     gradient.addColorStop(1, 'rgba(255, 165, 0, 0.2)');
 
-    // Соединяем точки линией
+
     ctx.beginPath();
     ctx.moveTo(x1 * scale, y1 * scale);
     ctx.lineTo(x2 * scale, y2 * scale);
